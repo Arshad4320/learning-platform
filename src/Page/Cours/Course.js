@@ -6,7 +6,6 @@ import SingelPage from '../SingelPage/SingelPage';
 
 const Course = () => {
     const allCourse = useLoaderData()
-    console.log(allCourse)
     return (
         <div >
 

@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className='w-'>
             <Image
-                className='w-100 h-5/6 '
+                style={{ width: "900vh", height: "700px" }}
                 src={img3}></Image>
         </div >
     );
