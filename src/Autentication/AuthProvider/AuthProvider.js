@@ -5,15 +5,18 @@ import app from '../../Firebase/Firebase';
 
 export const contextProvider = createContext()
 const auth = getAuth(app)
+
 const AuthProvider = ({ children }) => {
 
-    const userLogin = (email, password) => {
+    const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
 
-
-    const authInfo = { userLogin };
+    // const creatUser=(email,password)=>{
+    //     return 
+    // }
+    const authInfo = { createUser };
     return (
         <contextProvider.Provider value={authInfo}>
             {children}
