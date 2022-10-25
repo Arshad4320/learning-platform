@@ -1,14 +1,19 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
+import SingelPage from '../SingelPage/SingelPage';
+
 
 const Course = () => {
+    const allCourse = useLoaderData()
+    console.log(allCourse)
     return (
-        <Container>
-            <Row>
-                <Col lg-4>Nav site</Col>
-                <Col lg-8>Cours</Col>
-            </Row>
-        </Container>
+        <div >
+
+            {
+                allCourse.map(course => <SingelPage key={allCourse.id} course={course}></SingelPage>)
+            }
+        </div >
     );
 };
 

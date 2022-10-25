@@ -6,9 +6,11 @@ import img2 from '../../Image/image2.jpg'
 import img3 from '../../Image/image3.jpg'
 const Home = () => {
     return (
-        <Image
-            className='w-100 d-block h-50'
-            src={img1}></Image>
+        <div className='w-'>
+            <Image
+                className='w-100 h-5/6 '
+                src={img3}></Image>
+        </div >
     );
 };
 
