@@ -1,16 +1,18 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
-import Carousel from 'react-bootstrap/Carousel';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 import img1 from '../../Image/image1.jpg'
 import img2 from '../../Image/image2.jpg'
 import img3 from '../../Image/image3.jpg'
 const Home = () => {
     return (
-        <div className='w-'>
-            <Image
-                style={{ width: "900vh", height: "700px" }}
-                src={img3}></Image>
-        </div >
+        <Row>
+            <Col>
+                <Image
+                    style={{ width: "900vh", height: "620px", overflow: "hidden" }}
+                    src={img2}>
+                </Image>
+            </Col>
+        </Row>
     );
 };
 

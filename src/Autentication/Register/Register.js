@@ -44,7 +44,7 @@ const Register = () => {
     return (
         <Container>
             <Row>
-                <Col lg='6' className='m-auto'>
+                <Col lg='6' className='m-auto '>
                     <div className='m-14 '>
                         <Form onSubmit={handelUser} className=' shadow-2xl bg-orange-600  p-10 rounded text-gray-300'>
                             <h3>Please Register</h3>
