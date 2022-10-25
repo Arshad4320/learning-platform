@@ -7,12 +7,13 @@ import SingelPage from '../SingelPage/SingelPage';
 const Course = () => {
     const allCourse = useLoaderData()
     return (
-        <div >
-
-            {
-                allCourse.map(course => <SingelPage key={allCourse.id} course={course}></SingelPage>)
-            }
-        </div >
+        <Container>
+            <Row>
+                {
+                    allCourse.map(course => <SingelPage key={course.id} course={course}></SingelPage>)
+                }
+            </Row>
+        </Container>
     );
 };
 

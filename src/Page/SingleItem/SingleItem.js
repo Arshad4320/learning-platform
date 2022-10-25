@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt, FaArrowLeft } from "react-icons/fa";
 
 
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
@@ -27,7 +27,7 @@ const SingleItem = () => {
                                 </div>
                                 <h5>Price :{price}</h5>
                             </div>
-                            <Button ><Link to='/course' className='text-decoration-none text-white'>See All Course</Link></Button>
+                            <Button className='d-flex mt-3' ><FaArrowLeft className='me-2 mt-1'></FaArrowLeft><Link to='/course' className='text-decoration-none text-white'>See All Course</Link></Button>
                         </div>
                     </div>
                 </Col>

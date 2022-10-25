@@ -1,18 +1,25 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Col, Container, Row, Button } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
 
 const SingelPage = ({ course }) => {
-    const { name, title, id } = course
+    const { title, image, name } = course
     return (
-        <div>
-            <Container>
-                <Row>
-                    <Col lg="5"><Link to={`/course/${id}`}>{name}</Link></Col>
-                    <Col lg="7">{title}</Col>
-                </Row>
-            </Container>
-        </div>
+        <Container fluid>
+            <Row>
+                <Col lg="4"><p>{name}</p></Col>
+                <Col lg='4'>
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={image} />
+                        <Card.Body>
+                            <Card.Title>{title}</Card.Title>
+
+                            <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 

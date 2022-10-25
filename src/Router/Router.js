@@ -1,3 +1,4 @@
+import { Card } from "react-bootstrap";
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../Autentication/Login/Login";
 import Register from "../Autentication/Register/Register";
@@ -19,11 +20,6 @@ export const router = createBrowserRouter([
             },
 
             {
-                path: '/course',
-                element: <Course></Course>,
-                loader: () => fetch(`http://localhost:5000/course`)
-            },
-            {
                 path: '/blog',
                 element: <Blog></Blog>
             },
@@ -34,11 +30,25 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
-            }, {
+            },
+            {
+                path: '/course',
+                element: <Course></Course>,
+                loader: () => fetch(`http://localhost:5000/course`)
+            },
+            {
                 path: '/course/:id',
                 element: <SingleItem></SingleItem>,
                 loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+            },
+            {
+                path: '/course',
+                element: <Card></Card>,
+                loader: () => fetch(`http://localhost:5000/course`)
             }
+
+
+
         ]
     },
     {
