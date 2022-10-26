@@ -7,6 +7,7 @@ const SingelPage = ({ course }) => {
     const { name, image, id, title } = course
     return (
         <div className='mb-3'>
+
             <div className='bg-gray-200 p-3 rounded-md border-2 border-blue-300 '>
                 <div>
                     <Image className='rounded-md border-2 border-blue-300' style={{ width: '100%' }} src={image}></Image>

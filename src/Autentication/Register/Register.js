@@ -5,15 +5,21 @@ import { Link, useNavigate } from 'react-router-dom';
 import { contextProvider } from './../AuthProvider/AuthProvider';
 import swal from 'sweetalert';
 import { Col, Container, Row } from 'react-bootstrap';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 
 
 
 
 const Register = () => {
-    const navigate = useNavigate()
-    const { createUser } = useContext(contextProvider)
 
+    //provider 
+    const GoogleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
+    const navigate = useNavigate()
+    const { createUser, googleSignIn, githubSignIn } = useContext(contextProvider)
+    //createUser
     const handelUser = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -22,7 +28,6 @@ const Register = () => {
         const name = form.email.value;
         const photoUrl = form.photoUrl.value;
         console.log(email, password, name, photoUrl)
-
 
         createUser(email, password)
             .then(result => {
@@ -37,9 +42,26 @@ const Register = () => {
                 swal("Sorry !", "Your password or email invalid please type valid email and password", "error");
             })
     }
-
-
-
+    //signIn google
+    const handelGoogle = () => {
+        googleSignIn(GoogleProvider)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+    //signIn github
+    const handelGithub = () => {
+        githubSignIn(githubProvider)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
 
     return (
         <Container>
@@ -73,9 +95,14 @@ const Register = () => {
                                 <Form.Check type="checkbox" label="Check me out" />
                             </Form.Group>
                             <p>You have an Account?<Link to='/login'>Please Login</Link></p>
+
                             <Button className='text-orange-900' variant="dark" type="submit">
                                 Submit
                             </Button>
+
+                            <Button variant="primary" className='d-flex mb-2 mt-3' onClick={handelGoogle}><FaGoogle className='mt-1 mr-1' /><span>Sign In With Google</span></Button>
+
+                            <Button variant="dark" className='d-flex  ' onClick={handelGithub}><FaGithub className='mt-1 mr-1' /><span>Sign in With Github</span></Button>
                         </Form>
                     </div>
                 </Col>

@@ -8,6 +8,8 @@ import { FaUserAlt } from "react-icons/fa";
 import logo from '../../Image/logu.png'
 import { Link } from 'react-router-dom';
 import { contextProvider } from '../../Autentication/AuthProvider/AuthProvider';
+import { Card } from 'react-bootstrap';
+import Course from '../Cours/Course';
 const Header = () => {
     const { user, logOUt } = useContext(contextProvider)
 
@@ -33,40 +35,34 @@ const Header = () => {
                         <Nav.Link href="#pricing"><Link className='text-decoration-none text-lg font-semibold text-orange-400' to='/faq'>FAQ</Link></Nav.Link>
                     </Nav>
                     <Nav>
+                        {user?.uid ?
+                            <>{user?.photoURL ?
+                                <Image className='ms-2 mt-3 w-' src={user?.photoURL}>
 
-                        {
-                            user?.uid ?
-                                <>
-                                    <Nav.Link href="#deets">
-                                        {
-                                            user?.photoURL ?
-                                                <Image src='user?.photoURL'></Image> :
-                                                <Button variant="warning" className='me-2 px-3 '>
-                                                    <FaUserAlt></FaUserAlt>
-                                                </Button>
-
-                                        }
-
-
-                                        <Button onClick={handelLogOut} variant="outline-warning">
-                                            <Link className='text-decoration-none text-white' to='/login'>Log Out</Link>
-                                        </Button>
-
-
-
-                                    </Nav.Link>
-
-                                </> :
+                                </Image> : <div className='h-10 w-10 mt-2 bg-white rounded-full '>
+                                    <FaUserAlt className=' rounded-full text-3xl mt-2 ms-1'></FaUserAlt>
+                                </div>
+                            }
                                 <Nav.Link href="#deets">
-                                    <Button variant="outline-warning">
-                                        <Link className='text-decoration-none text-white' to='/login'>Login</Link>
+                                    <Button onClick={handelLogOut} variant="outline-warning">
+                                        <Link className='text-decoration-none text-white' to='/login'>
+                                            Log Out
+                                        </Link>
                                     </Button>
                                 </Nav.Link>
+
+                            </> :
+                            <Nav.Link href="#deets">
+                                <Button variant="outline-warning">
+                                    <Link className='text-decoration-none text-white' to='/login'>Login</Link>
+                                </Button>
+                            </Nav.Link>
 
                         }
                         <Nav.Link eventKey={2} href="#memes">
                             <Button variant="outline-warning"><Link className='text-decoration-none text-white' to='/register'>Register</Link></Button>
                         </Nav.Link>
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
