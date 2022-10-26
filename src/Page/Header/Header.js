@@ -8,9 +8,11 @@ import { FaToggleOff, FaToggleOn, FaUserAlt } from "react-icons/fa";
 import logo from '../../Image/logu.png'
 import { Link } from 'react-router-dom';
 import { contextProvider } from '../../Autentication/AuthProvider/AuthProvider';
-import { Card } from 'react-bootstrap';
-import Course from '../Cours/Course';
+import Card from '../Card/Card';
+
+
 const Header = () => {
+
     //toggle Button
     const [state, setState] = useState(false);
 
@@ -18,7 +20,7 @@ const Header = () => {
         setState(!state)
     }
 
-
+    //log out
 
     const { user, logOUt } = useContext(contextProvider)
     const handelLogOut = () => {
@@ -49,11 +51,11 @@ const Header = () => {
                                 {user?.photoURL ?
                                     <Image className=' mt-2 rounded-full w-9 h-9' title={user?.displayName} src={user?.photoURL} />
                                     :
-                                    <div className='h-10 w-10 mt-2 bg-white rounded-full '>
-                                        <FaUserAlt className=' rounded-full text-3xl mt-2 ms-1'></FaUserAlt>
+                                    <div className='h-10 w-11 mt-2 bg-white rounded-full '>
+                                        <FaUserAlt className=' rounded-full w-7 h-8 mt-1 ms-2'></FaUserAlt>
                                     </div>
                                 }
-                                <Nav.Link href="#deets">
+                                <Nav.Link href="#deets" className='ms-2'>
                                     <Button onClick={handelLogOut} variant="outline-warning">
                                         <Link className='text-decoration-none text-white'>
                                             Log Out
@@ -70,8 +72,10 @@ const Header = () => {
                             </Nav.Link>
 
                         }
-                        <Button className='bg-dark border-0 ' onClick={toggle}>{state ? <FaToggleOff className='text-2xl w-8' /> : <FaToggleOn className='text-2xl w-8' />}</Button>
-
+                        <Button className='bg-dark border-0 ' onClick={toggle}>{state ? <FaToggleOff className='text-4xl w-8' /> : <FaToggleOn className='text-4xl w-8' />}</Button>
+                        <div className='d-lg-none d-sm-block d-md-block'>
+                            <Card></Card>
+                        </div>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

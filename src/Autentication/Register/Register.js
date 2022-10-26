@@ -96,7 +96,7 @@ const Register = () => {
                             <Form.Group className="mb-2" controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Check me out" />
                             </Form.Group>
-                            <p>You have an Account?<Link to='/login'>Please Login</Link></p>
+                            <p>Already have an Account?<Link to='/login'>Please Login</Link></p>
 
                             <Button className='text-orange-900' variant="dark" type="submit">
                                 Submit

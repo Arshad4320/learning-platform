@@ -7,7 +7,7 @@ const PrivetRout = ({ children }) => {
     const { user, loader } = useContext(contextProvider)
     const location = useLocation()
     if (loader) {
-        return <Spinner animation="border" variant="danger" />
+        return <div className='p-40 text-center'> <Spinner animation="grow" variant="warning" /></div>
 
     }
     if (!user) {
