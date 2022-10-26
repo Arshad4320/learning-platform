@@ -32,7 +32,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 form.reset()
-                navigate('/course')
+                navigate('/home')
                 swal("Congress!", "Your register complete!please login!", "success");
                 console.log(result.user)
 
@@ -46,6 +46,7 @@ const Register = () => {
     const handelGoogle = () => {
         googleSignIn(GoogleProvider)
             .then(result => {
+                navigate('/home')
                 console.log(result.user)
             })
             .catch(error => {
@@ -56,6 +57,7 @@ const Register = () => {
     const handelGithub = () => {
         githubSignIn(githubProvider)
             .then(result => {
+                navigate('/home')
                 console.log(result.user)
             })
             .catch(error => {

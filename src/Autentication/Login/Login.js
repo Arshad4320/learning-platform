@@ -4,14 +4,17 @@ import React from 'react';
 import { useContext } from 'react';
 import { contextProvider } from '../AuthProvider/AuthProvider';
 import swal from 'sweetalert';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
-
-
 
 
 const Login = () => {
     const { userLogin } = useContext(contextProvider)
+    const navigate = useNavigate()
+
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+
     const handleUserLogin = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -25,6 +28,7 @@ const Login = () => {
                 form.reset();
                 swal("Congress!", "You Successfully login!", "success");
                 console.log(result.user)
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error);

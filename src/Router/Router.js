@@ -7,7 +7,9 @@ import Blog from "../Page/Blog/Blog";
 import Course from "../Page/Cours/Course";
 import Error from "../Page/ErrorPage/Error";
 import Home from "../Page/Home/Home";
+import Premium from "../Page/Premium/Premium";
 import SingleItem from "../Page/SingleItem/SingleItem";
+import PrivetRout from './PrivetRout';
 
 export const router = createBrowserRouter([
     {
@@ -42,9 +44,9 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
             },
             {
-                path: '/course',
-                element: <Card></Card>,
-                loader: () => fetch(`http://localhost:5000/course`)
+                path: '/course/chackout/:id',
+                element: <PrivetRout><Premium></Premium></PrivetRout>,
+                loader: ({ params }) => fetch(`http://localhost:5000/course/chackout/${params.id}`)
             }
 
 

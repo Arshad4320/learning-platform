@@ -16,7 +16,7 @@ const Course = () => {
 
                 </Col>
 
-                <Col lg="9" md="8" sm="12" className='mt-5'>
+                <Col lg="9" md="2" sm="12" className='mt-5'>
                     <Row lg="2" md="2" sm="1" >
                         {
                             allCourse.map(course => <SingelPage key={course.id} course={course}></SingelPage>)

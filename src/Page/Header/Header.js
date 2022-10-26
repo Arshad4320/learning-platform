@@ -36,16 +36,17 @@ const Header = () => {
                     </Nav>
                     <Nav>
                         {user?.uid ?
-                            <>{user?.photoURL ?
-                                <Image className='ms-2 mt-3 w-' src={user?.photoURL}>
-
-                                </Image> : <div className='h-10 w-10 mt-2 bg-white rounded-full '>
-                                    <FaUserAlt className=' rounded-full text-3xl mt-2 ms-1'></FaUserAlt>
-                                </div>
-                            }
+                            <>
+                                {user?.photoURL ?
+                                    <Image className=' mt-2 rounded-full w-9 h-9' title={user?.displayName} src={user?.photoURL} />
+                                    :
+                                    <div className='h-10 w-10 mt-2 bg-white rounded-full '>
+                                        <FaUserAlt className=' rounded-full text-3xl mt-2 ms-1'></FaUserAlt>
+                                    </div>
+                                }
                                 <Nav.Link href="#deets">
                                     <Button onClick={handelLogOut} variant="outline-warning">
-                                        <Link className='text-decoration-none text-white' to='/login'>
+                                        <Link className='text-decoration-none text-white'>
                                             Log Out
                                         </Link>
                                     </Button>
@@ -53,15 +54,16 @@ const Header = () => {
 
                             </> :
                             <Nav.Link href="#deets">
-                                <Button variant="outline-warning">
+                                <Button variant="outline-warning" className='me-2'>
                                     <Link className='text-decoration-none text-white' to='/login'>Login</Link>
                                 </Button>
+                                <Button variant="outline-warning"><Link className='text-decoration-none text-white' to='/register'>Register</Link></Button>
                             </Nav.Link>
 
                         }
-                        <Nav.Link eventKey={2} href="#memes">
-                            <Button variant="outline-warning"><Link className='text-decoration-none text-white' to='/register'>Register</Link></Button>
-                        </Nav.Link>
+                        {/* <Nav.Link eventKey={2} href="#memes">
+
+                        </Nav.Link> */}
 
                     </Nav>
                 </Navbar.Collapse>
