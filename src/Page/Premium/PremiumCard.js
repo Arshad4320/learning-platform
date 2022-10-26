@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaDownload } from 'react-icons/fa';
 import { FaStar } from 'react-icons/fa';
 
+
+
+
+
 const PremiumCard = ({ data }) => {
 
     const { id, name, image, title, rating, price, description } = data
@@ -26,13 +30,18 @@ const PremiumCard = ({ data }) => {
                             </Card.Text>
                             <div className='d-flex justify-between'>
                                 <Link to={`/course/${id}`}> <Button variant="primary" className='d-flex'><FaArrowLeft className='mt-1 me-1' /><span>Back to Check Card</span> </Button></Link>
+                                {/* <Button onClick={toPdf} variant="primary" className='d-flex'><FaDownload className='mt-1 me-1' /><span>Download Course</span> </Button> */}
+
                                 <Button variant="primary" className='d-flex'><FaDownload className='mt-1 me-1' /><span>Download Course</span> </Button>
+
+
+
                             </div>
                         </Card.Body>
                     </Card>
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 };
 

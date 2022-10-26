@@ -1,18 +1,26 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { FaUserAlt } from "react-icons/fa";
+import { FaToggleOff, FaToggleOn, FaUserAlt } from "react-icons/fa";
 import logo from '../../Image/logu.png'
 import { Link } from 'react-router-dom';
 import { contextProvider } from '../../Autentication/AuthProvider/AuthProvider';
 import { Card } from 'react-bootstrap';
 import Course from '../Cours/Course';
 const Header = () => {
-    const { user, logOUt } = useContext(contextProvider)
+    //toggle Button
+    const [state, setState] = useState(false);
 
+    const toggle = () => {
+        setState(!state)
+    }
+
+
+
+    const { user, logOUt } = useContext(contextProvider)
     const handelLogOut = () => {
         logOUt()
             .then(result => { })
@@ -35,6 +43,7 @@ const Header = () => {
                         <Nav.Link href="#pricing"><Link className='text-decoration-none text-lg font-semibold text-orange-400' to='/faq'>FAQ</Link></Nav.Link>
                     </Nav>
                     <Nav>
+
                         {user?.uid ?
                             <>
                                 {user?.photoURL ?
@@ -61,9 +70,7 @@ const Header = () => {
                             </Nav.Link>
 
                         }
-                        {/* <Nav.Link eventKey={2} href="#memes">
-
-                        </Nav.Link> */}
+                        <Button className='bg-dark border-0 ' onClick={toggle}>{state ? <FaToggleOff className='text-2xl w-8' /> : <FaToggleOn className='text-2xl w-8' />}</Button>
 
                     </Nav>
                 </Navbar.Collapse>
