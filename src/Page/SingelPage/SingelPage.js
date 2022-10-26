@@ -1,25 +1,22 @@
 import React from 'react';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Col, Container, Row, Button, Image, CardGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-
+import { Link } from 'react-router-dom';
+import './singelpage.css'
 const SingelPage = ({ course }) => {
-    const { title, image, name } = course
+    const { name, image, id, title } = course
     return (
-        <Container fluid>
-            <Row>
-                <Col lg="4"><p>{name}</p></Col>
-                <Col lg='4'>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={image} />
-                        <Card.Body>
-                            <Card.Title>{title}</Card.Title>
+        <div className='mb-3'>
+            <div className='bg-gray-200 p-3 rounded-md border-2 border-blue-300 '>
+                <div>
+                    <Image className='rounded-md border-2 border-blue-300' style={{ width: '100%' }} src={image}></Image>
+                    <h5 className='mt-2'>{name}</h5>
+                    <p className='text-gray-600'>{title}</p>
+                </div>
+                <button className='bg-orange-600 p-2 rounded-md hover:bg-orange-700'><Link className='text-decoration-none font-semi-bold text-white' to={`/course/${id}`}>Premium Access</Link></button>
+            </div>
 
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>
+        </div>
     );
 };
 
