@@ -42,7 +42,7 @@ const Header = () => {
                         <Nav.Link href="#features"><Link className='text-decoration-none text-lg font-semibold text-orange-400' to='/'>Home</Link></Nav.Link>
                         <Nav.Link href="#features"><Link className='text-decoration-none text-lg font-semibold text-orange-400' to='/course'>Course</Link></Nav.Link>
                         <Nav.Link href="#pricing"><Link className='text-decoration-none text-lg font-semibold text-orange-400' to='/blog'>Blog</Link></Nav.Link>
-                        <Nav.Link href="#pricing"><Link className='text-decoration-none text-lg font-semibold text-orange-400' to='/'>FAQ</Link></Nav.Link>
+                        <Nav.Link href="#pricing"><Link className='text-decoration-none text-lg font-semibold text-orange-400' to='/faq'>FAQ</Link></Nav.Link>
                     </Nav>
                     <Nav>
 
