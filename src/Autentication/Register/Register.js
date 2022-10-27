@@ -47,9 +47,11 @@ const Register = () => {
         googleSignIn(GoogleProvider)
             .then(result => {
                 navigate('/')
+                swal("Congress!", "Your register complete!please login!", "success");
                 console.log(result.user)
             })
             .catch(error => {
+                swal("Sorry !", "Your password or email invalid please type valid email and password", "error");
                 console.error(error)
             })
     }
@@ -58,60 +60,60 @@ const Register = () => {
         githubSignIn(githubProvider)
             .then(result => {
                 navigate('/')
+                swal("Congress!", "Your register complete!please login!", "success");
                 console.log(result.user)
             })
             .catch(error => {
+                swal("Sorry !", "Your password or email invalid please type valid email and password", "error");
                 console.error(error)
             })
     }
 
     return (
-        <Container>
-            <Row>
-                <Col lg='6' className='m-auto '>
-                    <div className='m-14 '>
-                        <Form onSubmit={handelUser} className=' shadow-2xl bg-orange-600  p-10 rounded text-gray-300'>
-                            <h3>Please Register</h3>
+        <Row>
+            <Col lg='6' className='m-auto '>
+                <div className='m-14 '>
+                    <Form onSubmit={handelUser} className=' shadow-2xl bg-orange-600  p-10 rounded text-gray-300'>
+                        <h3>Please Register</h3>
 
-                            <Form.Group className="mb-2" controlId="formBasicEmail">
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control name="name" type="text" placeholder="Enter Name" />
-                            </Form.Group>
+                        <Form.Group className="mb-2" controlId="formBasicEmail">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control name="name" type="text" placeholder="Enter Name" />
+                        </Form.Group>
 
-                            <Form.Group className="mb-2" controlId="formBasicEmail">
-                                <Form.Label>Photo Url</Form.Label>
-                                <Form.Control name="photoUrl" type="text" placeholder="Enter photo url" />
-                            </Form.Group>
+                        <Form.Group className="mb-2" controlId="formBasicEmail">
+                            <Form.Label>Photo Url</Form.Label>
+                            <Form.Control name="photoUrl" type="text" placeholder="Enter photo url" />
+                        </Form.Group>
 
-                            <Form.Group className="mb-2" controlId="formBasicEmail">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control name="email" type="email" placeholder="Email" required />
-                            </Form.Group>
+                        <Form.Group className="mb-2" controlId="formBasicEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control name="email" type="email" placeholder="Email" required />
+                        </Form.Group>
 
-                            <Form.Group className="mb-2" controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control name="password" password="password" type="password" placeholder="Password" required />
-                            </Form.Group>
+                        <Form.Group className="mb-2" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control name="password" password="password" type="password" placeholder="Password" required />
+                        </Form.Group>
 
-                            <Form.Group className="mb-2" controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
-                            <p>Already have an Account?<Link to='/login'>Please Login</Link></p>
+                        <Form.Group className="mb-2" controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="Check me out" />
+                        </Form.Group>
+                        <p>Already have an Account?<Link to='/login'>Please Login</Link></p>
 
-                            <Button className='text-orange-900 w-100' variant="dark" type="submit">
-                                Submit
-                            </Button>
+                        <Button className='text-orange-900 w-100' variant="dark" type="submit">
+                            Submit
+                        </Button>
 
-                            <div className=''>
-                                <Button variant="primary" className='d-flex mb-2 mt-3 w-100 justify-center' onClick={handelGoogle}><FaGoogle className='mt-1 mr-1' /><span >Sign In With Google</span></Button>
+                        <div className=''>
+                            <Button variant="primary" className='d-flex mb-2 mt-3 w-100 justify-center' onClick={handelGoogle}><FaGoogle className='mt-1 mr-1' /><span >Sign In With Google</span></Button>
 
-                                <Button variant="dark" className='d-flex w-100 justify-center' onClick={handelGithub}><FaGithub className='mt-1 mr-1' /><span >Sign in With Github</span></Button>
-                            </div>
-                        </Form>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+                            <Button variant="dark" className='d-flex w-100 justify-center' onClick={handelGithub}><FaGithub className='mt-1 mr-1' /><span >Sign in With Github</span></Button>
+                        </div>
+                    </Form>
+                </div>
+            </Col>
+        </Row>
     );
 };
 

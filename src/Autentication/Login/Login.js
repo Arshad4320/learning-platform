@@ -36,33 +36,31 @@ const Login = () => {
             })
     }
     return (
-        <Container>
-            <Row>
-                <Col lg='6' className='m-auto'>
-                    <div className='mt-14 '>
-                        <Form onSubmit={handleUserLogin} className='  shadow-2xl bg-orange-600  p-10 rounded text-gray-300'>
-                            <h3>Please Login</h3>
-                            <Form.Group className="mb-2" controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control name="email" type="email" placeholder="Enter email" required />
-                            </Form.Group>
+        <Row>
+            <Col lg='6' className='m-auto '>
+                <div className='m-14 '>
+                    <Form onSubmit={handleUserLogin} className='  shadow-2xl bg-orange-600  p-10 rounded text-gray-300'>
+                        <h3>Please Login</h3>
+                        <Form.Group className="mb-2" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control name="email" type="email" placeholder="Enter email" required />
+                        </Form.Group>
 
-                            <Form.Group className="mb-2" controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control name="password" password="password" type="password" placeholder="Password" required />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
-                            <p>Create New Account?<Link to='/register'>please register</Link></p>
-                            <Button variant="dark" className='w-40' type="submit">
-                                Submit
-                            </Button>
-                        </Form>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+                        <Form.Group className="mb-2" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control name="password" password="password" type="password" placeholder="Password" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="Check me out" />
+                        </Form.Group>
+                        <p>Create New Account?<Link to='/register'>please register</Link></p>
+                        <Button variant="dark" className='w-100' type="submit">
+                            Submit
+                        </Button>
+                    </Form>
+                </div>
+            </Col>
+        </Row>
     );
 };
 

@@ -4,7 +4,7 @@ import img2 from '../../Image/image2.jpg'
 
 const Home = () => {
     return (
-        <Image fluid className='w-100'
+        <Image fluid className='w-100 w-100'
             src={img2}>
         </Image>
     );
