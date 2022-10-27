@@ -32,7 +32,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 form.reset()
-                navigate('/home')
+                navigate('/')
                 swal("Congress!", "Your register complete!please login!", "success");
                 console.log(result.user)
 
@@ -46,7 +46,7 @@ const Register = () => {
     const handelGoogle = () => {
         googleSignIn(GoogleProvider)
             .then(result => {
-                navigate('/home')
+                navigate('/')
                 console.log(result.user)
             })
             .catch(error => {
@@ -57,7 +57,7 @@ const Register = () => {
     const handelGithub = () => {
         githubSignIn(githubProvider)
             .then(result => {
-                navigate('/home')
+                navigate('/')
                 console.log(result.user)
             })
             .catch(error => {
@@ -98,13 +98,15 @@ const Register = () => {
                             </Form.Group>
                             <p>Already have an Account?<Link to='/login'>Please Login</Link></p>
 
-                            <Button className='text-orange-900' variant="dark" type="submit">
+                            <Button className='text-orange-900 w-100' variant="dark" type="submit">
                                 Submit
                             </Button>
 
-                            <Button variant="primary" className='d-flex mb-2 mt-3' onClick={handelGoogle}><FaGoogle className='mt-1 mr-1' /><span>Sign In With Google</span></Button>
+                            <div className=''>
+                                <Button variant="primary" className='d-flex mb-2 mt-3 w-100 justify-center' onClick={handelGoogle}><FaGoogle className='mt-1 mr-1' /><span >Sign In With Google</span></Button>
 
-                            <Button variant="dark" className='d-flex  ' onClick={handelGithub}><FaGithub className='mt-1 mr-1' /><span>Sign in With Github</span></Button>
+                                <Button variant="dark" className='d-flex w-100 justify-center' onClick={handelGithub}><FaGithub className='mt-1 mr-1' /><span >Sign in With Github</span></Button>
+                            </div>
                         </Form>
                     </div>
                 </Col>

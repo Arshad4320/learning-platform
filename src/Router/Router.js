@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
         element: <Main></Main>,
         children: [
             {
-                path: '/home',
+                path: '/',
                 element: <Home></Home>
             },
 
@@ -36,17 +36,17 @@ export const router = createBrowserRouter([
             {
                 path: '/course',
                 element: <Course></Course>,
-                loader: () => fetch(`http://localhost:5000/course`)
+                loader: () => fetch(`https://assigenment-server-arshad4320.vercel.app/course`)
             },
             {
                 path: '/course/:id',
                 element: <SingleItem></SingleItem>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://assigenment-server-arshad4320.vercel.app/course/${params.id}`)
             },
             {
                 path: '/course/chackout/:id',
                 element: <PrivetRout><Premium></Premium></PrivetRout>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/chackout/${params.id}`)
+                loader: ({ params }) => fetch(`https://assigenment-server-arshad4320.vercel.app/course/chackout/${params.id}`)
             }
 
 
