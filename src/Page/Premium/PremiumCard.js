@@ -3,7 +3,8 @@ import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaDownload } from 'react-icons/fa';
 import { FaStar } from 'react-icons/fa';
-
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
 
 
 
@@ -13,7 +14,7 @@ const PremiumCard = ({ data }) => {
     const { id, name, image, title, rating, price, description } = data
     return (
         <Container>
-            <Row>
+            <Row >
                 <Col lg="6" className='m-auto mt-5 rounded'>
                     <Card.Title className='bg-dark text-white text-center p-2 rounded'>{name} Programming</Card.Title>
                     <Card >
@@ -30,10 +31,8 @@ const PremiumCard = ({ data }) => {
                             </Card.Text>
                             <div className='d-flex justify-between'>
                                 <Link to={`/course/${id}`}> <Button variant="primary" className='d-flex'><FaArrowLeft className='mt-1 me-1' /><span>Back to Check Card</span> </Button></Link>
-                                {/* <Button onClick={toPdf} variant="primary" className='d-flex'><FaDownload className='mt-1 me-1' /><span>Download Course</span> </Button> */}
 
                                 <Button variant="primary" className='d-flex'><FaDownload className='mt-1 me-1' /><span>Download Course</span> </Button>
-
 
 
                             </div>
@@ -44,5 +43,4 @@ const PremiumCard = ({ data }) => {
         </Container >
     );
 };
-
 export default PremiumCard;

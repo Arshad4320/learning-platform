@@ -32,6 +32,7 @@ const Blog = () => {
                         <h5>How does switch route work?</h5>
                         <p className='text-justify'>When a frame enters the switch port, the switch checks the dynamic table in memory which stores Physical Port and MAC address pairs. Switch then knows which port to use to forward the frame. Remember: switch does not look into the IP packet and forwards frame as is based on the destination MAC address.</p>
                     </div>
+
                 </Col>
 
             </Row>
