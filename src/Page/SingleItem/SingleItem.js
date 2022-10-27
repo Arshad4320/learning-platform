@@ -28,13 +28,13 @@ const SingleItem = () => {
                                 <h5>Price :{price}</h5>
                             </div>
                             <div className='d-flex justify-between'>
-                                <Link to={`/course/chackout/${id}`}>
-                                    <Button className='d-flex mt-3 d-flex'>
+                                <Link to={`/course/chackout/${id}`} className='text-decoration-none'>
+                                    <Button variant="dark" className='d-flex mt-3 d-flex  border-0'>
                                         <span>Buy Now</span> <FaArrowRight className='mt-1 ms-2' />
                                     </Button>
                                 </Link>
-                                <Link to='/course'>
-                                    <Button className='d-flex mt-3 d-flex'>
+                                <Link to='/course' className='text-decoration-none '>
+                                    <Button variant="dark" className='d-flex mt-3 d-flex  border-0'>
                                         <span>See All Course</span>
                                     </Button>
                                 </Link>

@@ -10,12 +10,9 @@ const Course = () => {
     return (
         <Container>
             <Row>
-
                 <Col lg="3" className='d-none d-lg-block '>
                     <Card></Card>
-
                 </Col>
-
                 <Col lg="9" className='mt-5'>
                     <Row lg="2" md="2" sm="1" >
                         {
@@ -23,8 +20,6 @@ const Course = () => {
                         }
                     </Row>
                 </Col>
-
-
             </Row>
         </Container>
     );

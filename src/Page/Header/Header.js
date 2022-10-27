@@ -65,10 +65,11 @@ const Header = () => {
 
                             </> :
                             <Nav.Link href="#deets">
-                                <Button variant="outline-warning" className='me-2'>
-                                    <Link className='text-decoration-none text-white' to='/login'>Login</Link>
-                                </Button>
-                                <Button variant="outline-warning"><Link className='text-decoration-none text-white' to='/register'>Register</Link></Button>
+                                <Link className='text-decoration-none text-white' to='/login'>
+                                    <Button variant="outline-warning" className='me-2'>
+                                        Login
+                                    </Button></Link>
+                                <Link className='text-decoration-none text-white' to='/register'><Button variant="outline-warning">Register</Button></Link>
                             </Nav.Link>
 
                         }

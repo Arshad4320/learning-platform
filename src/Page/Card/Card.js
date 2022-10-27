@@ -15,9 +15,9 @@ const Card = () => {
 
 
     return (
-        <div className='mt-5'>
+        <div className='mt-11'>
             {
-                card.map(cards => <p><button className='bg-orange-800 p-2 mb-0 rounded-md hover:bg-orange-600 w-64'><Link className='text-decoration-none text-black w-60' to={`/course/${cards.id}`}>{cards.name}</Link></button></p>)
+                card.map(cards => <div className='bg-dark'><Link className='text-decoration-none text-white ' to={`/course/${cards.id}`}> <button className=' p-2  rounded-md hover:bg-orange-600 w-100'>{cards.name}</button></Link></div>)
             }
 
         </div>

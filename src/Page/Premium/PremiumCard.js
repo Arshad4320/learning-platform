@@ -30,9 +30,9 @@ const PremiumCard = ({ data }) => {
                                 {description}
                             </Card.Text>
                             <div className='d-flex justify-between'>
-                                <Link to={`/course/${id}`}> <Button variant="primary" className='d-flex'><FaArrowLeft className='mt-1 me-1' /><span>Back to Check Card</span> </Button></Link>
+                                <Link to={`/course/${id}`} className='text-decoration-none'> <Button variant="dark" className='d-flex'><FaArrowLeft className='mt-1 me-1' /><span>Back to Check Card</span> </Button></Link>
 
-                                <Button variant="primary" className='d-flex'><FaDownload className='mt-1 me-1' /><span>Download Course</span> </Button>
+                                <Button variant="dark" className='d-flex'><FaDownload className='mt-1 me-1' /><span>Download Course</span> </Button>
 
 
                             </div>

@@ -16,7 +16,8 @@ const SingelPage = ({ course }) => {
                     <h5 className='mt-2'>{name}</h5>
                     <p className='text-gray-600'>{title}</p>
                 </div>
-                <Link className='text-decoration-none font-semi-bold text-white' to={`/course/${id}`}><button className='bg-orange-600 p-2 rounded-md hover:bg-orange-700 d-flex'><span>Premium Course</span> <FaArrowRight className='mt-1 ms-1' /></button></Link>
+                <Link className='text-decoration-none font-semi-bold text-white' to={`/course/${id}`}><button className='hover:bg-orange-600 p-2 rounded-md 
+            bg-dark d-flex'><span>Premium Course</span> <FaArrowRight className='mt-1 ms-1' /></button></Link>
 
             </div>
 
