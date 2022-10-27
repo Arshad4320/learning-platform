@@ -51,7 +51,7 @@ const Header = () => {
                                 {user?.photoURL ?
                                     <Image className=' mt-2 rounded-full w-9 h-9' title={user?.displayName} src={user?.photoURL} />
                                     :
-                                    <div className='h-10 w-11 mt-2 bg-white rounded-full '>
+                                    <div className='h-10 w-12 mt-2 bg-white rounded-full '>
                                         <FaUserAlt className=' rounded-full w-7 h-8 mt-1 ms-2'></FaUserAlt>
                                     </div>
                                 }
